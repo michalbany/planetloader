@@ -1,9 +1,25 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Permanent+Marker&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    
+}
+
+h1 span:first-of-type {
+  background-color: rgb(45,193,49);
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  font-weight: bold
+}
+
+h1 span {
+  font-weight: lighter;
 }
 
 svg {
@@ -32,7 +48,8 @@ svg {
 .stroke {
     fill: none;
     stroke-width: 2;
-    stroke: #005C53;
+    /*stroke: #005C53;*/
+    stroke: black;
     stroke-linecap: round;
     stroke-dasharray: 190 60;
     stroke-dashoffset: 0;
@@ -40,7 +57,8 @@ svg {
 
 .circle {
     fill: none;
-    stroke: #005C53;
+    /*stroke: #005C53;*/
+    stroke: black;
     stroke-width: 4;
     stroke-linecap: round;
     animation: spin 1s ease infinite;
@@ -48,13 +66,18 @@ svg {
 
 @keyframes spin {
     0% {
-        stroke-dasharray: 200 60;
-        stroke-dashoffset: 0;
-    }
-
-    100% {
         stroke-dasharray: 0 300;
         stroke-dashoffset: 50;
 
+    }
+  
+    80% {
+        opacity: 1;
+    }
+  
+    100% {
+      stroke-dasharray: 200 60;
+      stroke-dashoffset: 0;
+      opacity: 0;
     }
 }
